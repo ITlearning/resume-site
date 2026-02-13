@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="인병윤 iOS Developer 이력서" />
+    <title>인병윤 | iOS Developer Resume</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+      :root {
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: #dbe2ea;
+        --accent: #1d4ed8;
+        --bg: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f8fafc;
+        color: var(--ink);
+        font-family: "Noto Sans KR", sans-serif;
+        line-height: 1.34;
+        word-break: keep-all;
+        line-break: auto;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10px auto;
+        background: var(--bg);
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+        padding: 9mm 9mm 8mm;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 7px;
+      }
+
+      .name {
+        margin: 0;
+        font-family: "Archivo", "Noto Sans KR", sans-serif;
+        font-size: 27px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      .role {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .contact {
+        margin: 1px 0 0;
+        text-align: right;
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .contact a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      h2 {
+        margin: 8px 0 4px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink);
+        border-left: 3px solid var(--accent);
+        padding-left: 6px;
+        font-family: "Archivo", "Noto Sans KR", sans-serif;
+        letter-spacing: 0.01em;
+      }
+
+      p {
+        margin: 0;
+        font-size: 10.7px;
+      }
+
+      ul {
+        margin: 3px 0 0;
+        padding-left: 18px;
+        list-style-position: outside;
+      }
+
+      li {
+        margin: 1px 0;
+        font-size: 10.7px;
+        padding-left: 1px;
+      }
+
+      .summary p + p {
+        margin-top: 3px;
+      }
+
+      .job {
+        margin-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed var(--line);
+      }
+
+      .job:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .job-title {
+        font-size: 11.3px;
+        font-weight: 700;
+      }
+
+      .job-date {
+        font-size: 10.4px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .skills {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 4px;
+        table-layout: fixed;
+      }
+
+      .skills th,
+      .skills td {
+        border: 1px solid var(--line);
+        padding: 4px 5px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 10.3px;
+      }
+
+      .skills th {
+        width: 27%;
+        background: #f8fafc;
+        font-weight: 700;
+      }
+
+      .meta {
+        margin-top: 4px;
+      }
+
+      .meta li {
+        margin: 2px 0;
+      }
+
+      .link {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          width: 100%;
+          min-height: auto;
+          margin: 0;
+          border: 0;
+          box-shadow: none;
+          padding: 14px;
+        }
+
+        .header {
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .contact {
+          text-align: left;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .page {
+          margin: 0;
+          width: auto;
+          min-height: auto;
+          border: 0;
+          box-shadow: none;
+          padding: 1.5mm 2.5mm 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1 class="name">인병윤</h1>
+          <p class="role">iOS Developer</p>
+        </div>
+        <p class="contact">
+          yo7504@kakao.com<br />
+          <a href="https://github.com/ITlearning">GitHub</a> | <a href="https://velog.io/@kirri1124/posts">Blog</a> |
+          <a href="https://www.linkedin.com/in/byeongyun-in/">LinkedIn</a>
+        </p>
+      </header>
+
+      <section class="summary">
+        <h2>요약</h2>
+        <p>iOS 개발 경력 4년+로 스트리밍/미디어 처리/성능 최적화 업무를 중심으로 일해왔습니다.</p>
+        <p>RTMP ABR, SRT 복구, 난독화 크래시 분석으로 송출 지연 <strong>85% 단축</strong>, RTT 안정성 <strong>2배 향상</strong>, 적용 버전 크래시율 <strong>0%</strong>를 만들었습니다.</p>
+        <p>국내외 고객사 협업 환경에서 SDK 품질을 개선해 안정적으로 운영한 경험이 있습니다.</p>
+      </section>
+
+      <section>
+        <h2>핵심 성과</h2>
+        <ul>
+          <li>RTMP ABR 구현: 송출 지연 <strong>7분+ -> 5~7초</strong> 개선 (<strong>85% 단축</strong>)</li>
+          <li>디스크 캐싱 구축: 해외 웹뷰 로딩 <strong>2.0s -> 0.3s</strong>, 트래픽 비용 <strong>25%</strong> 절감</li>
+          <li>렌더링 최적화: 메모리 <strong>50% 감소</strong>, 스크롤 CPU <strong>70% 개선</strong></li>
+          <li>dSYM 없는 난독화 크래시 분석으로 적용 버전 크래시율 <strong>0%</strong> 달성</li>
+          <li>HaishinKit.swift(<strong>2,900+ stars</strong>) 아키텍처 개선 PR 기여, 메인테이너 리뷰 3회 반영 후 머지</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>경력</h2>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title">샵라이브코리아 | iOS SDK Developer</div>
+            <div class="job-date">2025.01 - 현재</div>
+          </div>
+          <ul>
+            <li>iOS SDK(송출/시청/숏폼 플레이어/에디터) 개발 및 유지보수 담당</li>
+            <li>ABR, SRT reconnect, 난독화 크래시 분석으로 상용 안정성 개선</li>
+            <li>디스크 캐싱 적용으로 해외 웹뷰 로딩 <strong>2.0s -> 0.3s</strong> 개선, 트래픽 비용 <strong>25%</strong> 절감</li>
+            <li>dSYM 없는 크래시 분석으로 동시성/메모리 이슈 해결, 적용 버전 크래시율 <strong>0%</strong></li>
+            <li>무신사, 오늘의집, 이베이 협업 과정에서 크로스 플랫폼 안정성 검증 진행</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title">교보문고 | iOS Developer</div>
+            <div class="job-date">2024.03 - 2024.10</div>
+          </div>
+          <ul>
+            <li>독립 앱을 <strong>100만 MAU</strong> 모체 앱에 SPM 모듈로 통합</li>
+            <li>외부 의존성 네이티브 전환으로 빌드 안정성/유지보수성 개선</li>
+            <li>촉박한 일정에서도 기능 손실 없이 서비스 이식 완료</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title">제제미미 | iOS Developer</div>
+            <div class="job-date">2022.02 - 2024.03</div>
+          </div>
+          <ul>
+            <li>SwiftUI + UIKit 기반 앱 개발, 렌더링/영상/이미지 처리 성능 개선</li>
+            <li>Vision Framework 중복 이미지 탐지, AVFoundation 영상 제작 기능 구현</li>
+            <li>네이티브 위젯/키보드 확장 기능 개발로 리텐션 개선에 기여</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>기술 스택 & 역량</h2>
+        <table class="skills">
+          <tr>
+            <th>언어/프레임워크</th>
+            <td>Swift, UIKit, SwiftUI, Combine, RxSwift</td>
+          </tr>
+          <tr>
+            <th>아키텍처</th>
+            <td>Clean Architecture, MVVM, Reactor Pattern, SPM 모듈화</td>
+          </tr>
+          <tr>
+            <th>전문 분야</th>
+            <td>iOS SDK 개발, 라이브 스트리밍 (RTMP/SRT/WebRTC/ABR), 영상/이미지 처리</td>
+          </tr>
+          <tr>
+            <th>협업 도구</th>
+            <td>Git, GitHub, Jira, Confluence, Figma</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>문제 해결 방식</h2>
+        <ul class="meta">
+          <li>증상을 바로 고치기보다 로그와 코드 근거로 원인을 먼저 좁힙니다.</li>
+          <li>가설을 하나만 두지 않고 여러 시나리오를 빠르게 실험해 검증합니다.</li>
+          <li>AI/MCP 도구는 코드 생성보다 원인 분석, 정리, 문서화 자동화에 집중해 사용합니다.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>오픈소스 · 활동 · 교육</h2>
+        <ul class="meta">
+          <li>HaishinKit.swift 기여: MediaMixer-VideoCodec 암묵적 의존성 제거, RTMP <strong>framerate</strong> 메타데이터 필드 추가</li>
+          <li>개인 제작 iOS 학습/개발 스킬: <strong>study-ios</strong> (<a class="link" href="https://github.com/ITlearning/study-ios">github.com/ITlearning/study-ios</a>)</li>
+          <li>YAPP iOS 운영진 (2024.04 - 2024.09), 순천향대학교 사물인터넷학과 (2018.03 - 2026.08 졸업 예정)</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
