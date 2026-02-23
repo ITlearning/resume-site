@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="인병윤 iOS Developer — B2C 앱·아키텍처 리드·사용자 경험" />
+    <title>인병윤 | iOS Developer</title>
+
+    <!-- Pretendard -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" as="style" crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
+
+    <style>
+      :root {
+        --ink:   #0d0d0b;
+        --body:  #383836;
+        --muted: #8a8a86;
+        --line:  #e2e1da;
+        --bg:    #eeede8;
+        --page:  #f9f8f3;
+        --red:   #1A5CC8;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background: var(--bg);
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 32px 16px 52px;
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── A4 ── */
+      .resume {
+        width: 210mm;
+        min-height: 297mm;
+        background: var(--page);
+        box-shadow:
+          0 2px 4px rgba(13,13,11,.06),
+          0 8px 24px rgba(13,13,11,.10),
+          0 24px 64px rgba(13,13,11,.12);
+      }
+
+      /* ══════════════════════════════════════
+         HEADER
+      ══════════════════════════════════════ */
+      .hdr {
+        padding: 9mm 11mm 6mm;
+        border-bottom: 1.5px solid var(--ink);
+      }
+
+      /* Name + meta — 한 줄로 소박하게 */
+      .h-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5mm;
+      }
+
+      .h-name {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      .h-dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--line);
+        flex-shrink: 0;
+      }
+
+      .h-role {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .h-years {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--muted);
+      }
+
+      /* Hook — 이 페이지의 진짜 타이틀 */
+      .h-hook {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+        margin-bottom: 5mm;
+      }
+
+      .h-hook .accent {
+        color: var(--red);
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      /* Contact */
+      .h-contact {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin-top: 7px;
+        flex-wrap: wrap;
+      }
+
+      .h-contact a {
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--muted);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding-right: 10px;
+        margin-right: 10px;
+        border-right: 1px solid var(--line);
+        cursor: pointer;
+        transition: color 150ms ease;
+      }
+
+      .h-contact a:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+      .h-contact a:hover { color: var(--red); }
+      .h-contact svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+      /* ══════════════════════════════════════
+         BODY — 2 col
+      ══════════════════════════════════════ */
+      .body {
+        display: grid;
+        grid-template-columns: 1fr 76mm;
+        gap: 7mm;
+        padding: 6mm 11mm 8mm;
+        align-items: start;
+      }
+
+      /* ── Section heading ── */
+      h2 {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--body);
+        padding-bottom: 2.5mm;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 3mm;
+      }
+
+      .sec { margin-bottom: 5mm; }
+      .sec:last-child { margin-bottom: 0; }
+
+      /* ══════════════════════════════════════
+         LEFT — EXPERIENCE
+      ══════════════════════════════════════ */
+      .exp { display: flex; flex-direction: column; gap: 4.5mm; }
+
+      .job-hdr {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .j-co {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+      }
+
+      .j-co-link {
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--red);
+        text-decoration: none;
+        opacity: .75;
+        transition: opacity 150ms;
+        cursor: pointer;
+      }
+      .j-co-link:hover { opacity: 1; }
+
+      .j-date {
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .j-role {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 2px;
+        margin-bottom: 2.5mm;
+      }
+
+      .j-clients {
+        font-size: 9px;
+        color: var(--muted);
+        margin-top: 1px;
+        margin-bottom: 2mm;
+        letter-spacing: .01em;
+      }
+
+      .j-clients-label {
+        font-size: 7.5px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-right: 4px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5px;
+        margin-bottom: 2mm;
+      }
+
+      .tag {
+        font-size: 8px;
+        font-weight: 500;
+        padding: 1.5px 5px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        border-radius: 2px;
+        white-space: nowrap;
+      }
+
+      ul.bl {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      ul.bl li {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--body);
+        padding-left: 10px;
+        position: relative;
+        line-height: 1.55;
+      }
+
+      ul.bl li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--red);
+        font-size: 11px;
+        top: 0.5px;
+      }
+
+      ul.bl strong {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      /* ══════════════════════════════════════
+         RIGHT — SIDEBAR
+      ══════════════════════════════════════ */
+      .right { display: flex; flex-direction: column; }
+
+      /* Skill pills */
+      .pill-grp { margin-bottom: 2.5mm; }
+      .pill-grp:last-child { margin-bottom: 0; }
+
+      .pg-label {
+        font-size: 8.5px;
+        font-weight: 600;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1.5mm;
+      }
+
+      .pills { display: flex; flex-wrap: wrap; gap: 2.5px; }
+
+      .pill {
+        font-size: 9px;
+        font-weight: 500;
+        padding: 2px 5px;
+        border: 1px solid var(--line);
+        color: var(--body);
+        border-radius: 2px;
+        white-space: nowrap;
+      }
+
+      .pill.hi {
+        border-color: var(--ink);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      /* Meta items */
+      .meta {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--body);
+        line-height: 1.55;
+        margin-bottom: 2.5mm;
+      }
+      .meta:last-child { margin-bottom: 0; }
+      .meta b { color: var(--ink); font-weight: 700; }
+      .meta small {
+        display: block;
+        font-size: 10px;
+        color: var(--muted);
+        margin-top: 1px;
+      }
+      .meta small a {
+        color: var(--red);
+        text-decoration: none;
+        opacity: .8;
+      }
+      .meta small a:hover { opacity: 1; }
+
+      /* OSS */
+      .oss-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink);
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .oss-stars { font-size: 9px; font-weight: 400; color: var(--muted); }
+      .oss-pr { font-size: 8.5px; color: var(--red); text-decoration: none; opacity: .8; }
+      .oss-pr:hover { opacity: 1; }
+
+      .oss-repo {
+        font-size: 8.5px;
+        color: var(--muted);
+        margin-top: 1px;
+        margin-bottom: 2mm;
+      }
+      .oss-repo a { color: var(--red); text-decoration: none; opacity: .8; }
+      .oss-repo a:hover { opacity: 1; }
+
+
+      /* ── Print ── */
+      @media print {
+        body { background: white; padding: 0; }
+        .resume { width: 100%; min-height: 297mm; box-shadow: none; }
+      }
+
+      @page { size: A4; margin: 0; }
+
+      /* ── Responsive (mobile) ── */
+      @media (max-width: 700px) {
+        body {
+          padding: 0;
+          background: var(--page);
+        }
+        .resume {
+          width: 100%;
+          min-height: unset;
+          box-shadow: none;
+        }
+        .hdr {
+          padding: 7vw 5vw 5vw;
+        }
+        .h-top {
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 4vw;
+        }
+        .h-name { font-size: 18px; }
+        .h-hook {
+          font-size: 16px;
+          margin-bottom: 4vw;
+        }
+        .h-contact {
+          row-gap: 6px;
+        }
+        .body {
+          grid-template-columns: 1fr;
+          padding: 5vw;
+          gap: 0;
+        }
+        .body > div:first-child {
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 5vw;
+          margin-bottom: 5vw;
+        }
+        h2 { font-size: 9px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+
+      <!-- ════════ HEADER ════════ -->
+      <header class="hdr">
+
+        <!-- 이름 + 메타 한 줄 -->
+        <div class="h-top">
+          <span class="h-name">인병윤</span>
+          <span class="h-dot"></span>
+          <span class="h-role">iOS Developer</span>
+          <span class="h-dot"></span>
+          <span class="h-years">4년+ · 재직 중</span>
+          <span class="h-dot"></span>
+          <span class="h-years">B2C 앱 · 아키텍처 리드</span>
+        </div>
+
+        <!--
+          ✏️ 이 문장이 첫인상을 결정합니다. 자유롭게 수정하세요.
+        -->
+        <p class="h-hook">
+          설계부터 배포까지 직접 책임지고,<br>
+          <span class="accent"><strong>버그를 잡으러 미국까지 날아갑니다.</strong></span>
+        </p>
+
+        <div class="h-contact">
+          <a href="mailto:yo7504@kakao.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            yo7504@kakao.com
+          </a>
+          <a href="https://github.com/ITlearning" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            github.com/ITlearning
+          </a>
+          <a href="https://www.linkedin.com/in/byeongyun-in/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://velog.io/@kirri1124/posts" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+            Velog
+          </a>
+        </div>
+
+      </header>
+
+      <!-- ════════ BODY ════════ -->
+      <div class="body">
+
+        <!-- ── 경력 + OSS + AI Skill (left) ── -->
+        <div>
+          <div class="sec">
+            <h2>경력</h2>
+            <div class="exp">
+
+              <div>
+                <div class="job-hdr">
+                  <span class="j-co">
+                    샵라이브코리아
+                    <a class="j-co-link" href="https://shoplive.kr" target="_blank" rel="noopener">shoplive.kr ↗</a>
+                    <a class="j-co-link" href="https://www.mk.co.kr/news/business/11962674" target="_blank" rel="noopener">MK ↗</a>
+                  </span>
+                  <span class="j-date">2025.01 – 현재</span>
+                </div>
+                <div class="j-role">iOS SDK Developer · 비디오 커머스 SaaS · 송출/시청/숏폼 SDK</div>
+                <div class="j-clients"><span class="j-clients-label">주요 고객사</span> eBay · 무신사 · 29CM · 에이블리 · 오늘의집</div>
+                <div class="tags">
+                  <span class="tag">UIKit</span>
+                  <span class="tag">Combine</span>
+                  <span class="tag">Clean Architecture</span>
+                  <span class="tag">RTMP · ABR</span>
+                  <span class="tag">SRT</span>
+                  <span class="tag">WebRTC</span>
+                </div>
+                <ul class="bl">
+                  <li>RTMP ABR 구현: 딜레이 드리프트 제거 — 최대 <strong>7분+ → 5~7초</strong> 안정화</li>
+                  <li>SRT 도입: 높은 RTT 환경 방송 안정성 WebRTC 대비 <strong>2배</strong> 향상</li>
+                  <li>디스크 캐싱: 해외 웹뷰 로딩 <strong>2.0s → 0.3s</strong>, 트래픽 비용 <strong>25%</strong> 절감</li>
+                  <li>dSYM 없는 난독화 크래시 분석: 데이터 레이스·댕글링 포인터 해결, 재발 <strong>0건</strong></li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="job-hdr">
+                  <span class="j-co">
+                    교보문고
+                    <a class="j-co-link" href="https://www.kyobobook.co.kr/" target="_blank" rel="noopener">kyobobook.co.kr ↗</a>
+                  </span>
+                  <span class="j-date">2024.03 – 2024.10</span>
+                </div>
+                <div class="j-role">iOS Developer · 유아동 발달 서비스 '<a href="https://v.daum.net/v/3xfa6gBWKY" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;opacity:.8;">세모가방 ↗</a>'</div>
+                <div class="tags">
+                  <span class="tag">SwiftUI</span>
+                  <span class="tag">Combine</span>
+                  <span class="tag">Clean Architecture</span>
+                  <span class="tag">SPM 모듈화</span>
+                </div>
+                <ul class="bl">
+                  <li>SPM 기반 Internal Library 설계: <strong>100만 MAU</strong> 모체 앱과 기능 모듈 분리·통합</li>
+                  <li>외부 라이브러리 네이티브 전환: 빌드 안정성·유지보수성 개선</li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="job-hdr">
+                  <span class="j-co">
+                    제제미미
+                    <a class="j-co-link" href="https://www.jejememe.com/" target="_blank" rel="noopener">jejememe.com ↗</a>
+                  </span>
+                  <span class="j-date">2022.02 – 2024.03</span>
+                </div>
+                <div class="j-role">iOS Developer · 육아 플랫폼 '<a href="https://apps.apple.com/kr/app/%EC%91%A5%EC%91%A5%EC%B0%B0%EC%B9%B5/id1509183009" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;opacity:.8;">쑥쑥찰칵 ↗</a>'</div>
+                <div class="tags">
+                  <span class="tag">UIKit</span>
+                  <span class="tag">SwiftUI</span>
+                  <span class="tag">UIGraphicsImageRenderer</span>
+                  <span class="tag">Vision</span>
+                  <span class="tag">AVFoundation</span>
+                  <span class="tag">WidgetKit</span>
+                </div>
+                <ul class="bl">
+                  <li>UIGraphicsImageRenderer 적용: 메모리 <strong>50% 감소</strong>, 스크롤 CPU <strong>70% 개선</strong></li>
+                  <li>Vision Framework 적용: 이미지 중복 탐지 <strong>60% 단축</strong>, 서버 용량 <strong>30%</strong> 절감</li>
+                  <li>AVFoundation 영상 제작 기능: 출시 후 설문 기반 만족도 <strong>20%</strong> 향상</li>
+                  <li>네이티브 위젯·키보드 확장: D7·D14 리텐션 <strong>75%</strong> 달성</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="sec">
+            <h2>오픈소스 기여</h2>
+            <div class="oss-name">
+              HaishinKit.swift
+              <span class="oss-stars">★ 3,000+</span>
+              <a class="oss-pr" href="https://github.com/HaishinKit/HaishinKit.swift/pull/1832" target="_blank" rel="noopener">PR ↗</a>
+            </div>
+            <div class="oss-repo">
+              <a href="https://github.com/HaishinKit/HaishinKit.swift" target="_blank" rel="noopener">HaishinKit/HaishinKit.swift</a>
+            </div>
+            <ul class="bl">
+              <li>MediaMixer–VideoCodec 암묵적 의존성 제거 및 구조 개선</li>
+              <li>RTMP 메타데이터에 <strong>framerate</strong> 필드 추가</li>
+              <li>메인테이너 피드백 <strong>3회</strong> 반영 → v2.2.2 최종 머지</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- ── 우측 사이드 ── -->
+        <div class="right">
+
+          <div class="sec">
+            <h2>기술 스택</h2>
+            <div class="pill-grp">
+              <div class="pg-label">언어 / 프레임워크</div>
+              <div class="pills">
+                <span class="pill">Swift</span>
+                <span class="pill">UIKit</span>
+                <span class="pill">SwiftUI</span>
+                <span class="pill">Combine</span>
+                <span class="pill">RxSwift</span>
+                <span class="pill">SPM</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">아키텍처</div>
+              <div class="pills">
+                <span class="pill">Clean Architecture</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">디자인 패턴</div>
+              <div class="pills">
+                <span class="pill">MVVM</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">미디어 / 스트리밍 (전문 분야)</div>
+              <div class="pills">
+                <span class="pill">iOS SDK</span>
+                <span class="pill">RTMP · ABR</span>
+                <span class="pill">SRT</span>
+                <span class="pill">WebRTC</span>
+                <span class="pill">AVFoundation</span>
+                <span class="pill">Vision</span>
+                <span class="pill">LLHLS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h2>AI Agent Skill</h2>
+            <div class="meta">
+              <b>study-ios</b><br />
+              수동적 Q&amp;A의 한계를 느끼고 직접 제작한 Swift 멘토링 SKILL.<br />
+              AI가 역질문으로 사고를 교정 — Classic · Mastery 2모드, Claude Code · Codex · Gemini 호환. 개발 학습 사이클 단축에 직접 활용 중.
+              <small><a href="https://github.com/ITlearning/study-ios" target="_blank" rel="noopener">github.com/ITlearning/study-ios</a></small>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h2>교육</h2>
+            <div class="meta">
+              <b>순천향대학교</b><br />
+              사물인터넷학과
+              <small>2018.03 – 2026.08 졸업 예정<br />군휴학 후 개발자 재직 병행 · 비대면 과제 학점 이수</small>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h2>활동</h2>
+            <div class="meta">
+              <b>YAPP</b> iOS 운영진 24기
+              <small>서류·면접 심사, 프로젝트 서포트<br />2024.04 – 2024.09</small>
+            </div>
+            <div class="meta">
+              <b>CMC 11기</b> 동아리 대상 수상
+              <small>메타인지 앱 '<a href="https://apps.apple.com/kr/app/mitamin/id6444240698" target="_blank" rel="noopener">MiTamin ↗</a>' 개발 · 2022.08–2022.11</small>
+            </div>
+            <div class="meta">
+              <b>YAPP</b> 19기 · 23기 참여
+              <small>2021.08 – 2024.02</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
