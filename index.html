@@ -62,8 +62,8 @@
       }
 
       .h-name {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 22px;
+        font-weight: 500;
         color: var(--ink);
         letter-spacing: -0.02em;
       }
@@ -77,7 +77,7 @@
       }
 
       .h-role {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 500;
         letter-spacing: .1em;
         text-transform: uppercase;
@@ -85,14 +85,14 @@
       }
 
       .h-years {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 400;
         color: var(--muted);
       }
 
       /* Hook — 이 페이지의 진짜 타이틀 */
       .h-hook {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         color: var(--ink);
         line-height: 1.4;
@@ -116,7 +116,7 @@
       }
 
       .h-contact a {
-        font-size: 9px;
+        font-size: 10px;
         font-weight: 400;
         color: var(--muted);
         text-decoration: none;
@@ -132,7 +132,7 @@
 
       .h-contact a:last-child { border-right: none; margin-right: 0; padding-right: 0; }
       .h-contact a:hover { color: var(--red); }
-      .h-contact svg { width: 10px; height: 10px; flex-shrink: 0; }
+      .h-contact svg { width: 11px; height: 11px; flex-shrink: 0; }
 
       /* ══════════════════════════════════════
          BODY — 2 col
@@ -147,11 +147,11 @@
 
       /* ── Section heading ── */
       h2 {
-        font-size: 8px;
+        font-size: 10px;
         font-weight: 700;
         letter-spacing: .2em;
         text-transform: uppercase;
-        color: var(--muted);
+        color: var(--body);
         padding-bottom: 2.5mm;
         border-bottom: 1px solid var(--line);
         margin-bottom: 3mm;
@@ -173,7 +173,7 @@
       }
 
       .j-co {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 700;
         color: var(--ink);
         display: flex;
@@ -182,7 +182,7 @@
       }
 
       .j-co-link {
-        font-size: 8.5px;
+        font-size: 10px;
         font-weight: 400;
         color: var(--red);
         text-decoration: none;
@@ -193,7 +193,7 @@
       .j-co-link:hover { opacity: 1; }
 
       .j-date {
-        font-size: 9px;
+        font-size: 10px;
         font-weight: 400;
         color: var(--muted);
         white-space: nowrap;
@@ -201,11 +201,28 @@
       }
 
       .j-role {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 400;
         color: var(--muted);
         margin-top: 2px;
         margin-bottom: 2.5mm;
+      }
+
+      .j-clients {
+        font-size: 9px;
+        color: var(--muted);
+        margin-top: 1px;
+        margin-bottom: 2mm;
+        letter-spacing: .01em;
+      }
+
+      .j-clients-label {
+        font-size: 7.5px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-right: 4px;
       }
 
       .tags {
@@ -233,7 +250,7 @@
       }
 
       ul.bl li {
-        font-size: 10.5px;
+        font-size: 11px;
         font-weight: 400;
         color: var(--body);
         padding-left: 10px;
@@ -246,7 +263,7 @@
         position: absolute;
         left: 0;
         color: var(--red);
-        font-size: 9px;
+        font-size: 11px;
         top: 0.5px;
       }
 
@@ -265,7 +282,7 @@
       .pill-grp:last-child { margin-bottom: 0; }
 
       .pg-label {
-        font-size: 7.5px;
+        font-size: 8.5px;
         font-weight: 600;
         letter-spacing: .1em;
         text-transform: uppercase;
@@ -276,7 +293,7 @@
       .pills { display: flex; flex-wrap: wrap; gap: 2.5px; }
 
       .pill {
-        font-size: 8px;
+        font-size: 9px;
         font-weight: 500;
         padding: 2px 5px;
         border: 1px solid var(--line);
@@ -286,13 +303,14 @@
       }
 
       .pill.hi {
-        border-color: var(--red);
-        color: var(--red);
+        border-color: var(--ink);
+        color: var(--ink);
+        font-weight: 700;
       }
 
       /* Meta items */
       .meta {
-        font-size: 9.5px;
+        font-size: 11px;
         font-weight: 400;
         color: var(--body);
         line-height: 1.55;
@@ -302,7 +320,7 @@
       .meta b { color: var(--ink); font-weight: 700; }
       .meta small {
         display: block;
-        font-size: 8.5px;
+        font-size: 10px;
         color: var(--muted);
         margin-top: 1px;
       }
@@ -315,7 +333,7 @@
 
       /* OSS */
       .oss-name {
-        font-size: 10.5px;
+        font-size: 12px;
         font-weight: 700;
         color: var(--ink);
         display: flex;
@@ -337,10 +355,6 @@
       .oss-repo a { color: var(--red); text-decoration: none; opacity: .8; }
       .oss-repo a:hover { opacity: 1; }
 
-      /* Approach */
-      .ap { display: flex; flex-direction: column; gap: 2mm; }
-      .ap-row { font-size: 9.5px; color: var(--body); line-height: 1.5; }
-      .ap-row b { color: var(--ink); }
 
       /* ── Print ── */
       @media print {
@@ -349,6 +363,46 @@
       }
 
       @page { size: A4; margin: 0; }
+
+      /* ── Responsive (mobile) ── */
+      @media (max-width: 700px) {
+        body {
+          padding: 0;
+          background: var(--page);
+        }
+        .resume {
+          width: 100%;
+          min-height: unset;
+          box-shadow: none;
+        }
+        .hdr {
+          padding: 7vw 5vw 5vw;
+        }
+        .h-top {
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 4vw;
+        }
+        .h-name { font-size: 18px; }
+        .h-hook {
+          font-size: 16px;
+          margin-bottom: 4vw;
+        }
+        .h-contact {
+          row-gap: 6px;
+        }
+        .body {
+          grid-template-columns: 1fr;
+          padding: 5vw;
+          gap: 0;
+        }
+        .body > div:first-child {
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 5vw;
+          margin-bottom: 5vw;
+        }
+        h2 { font-size: 9px; }
+      }
 
       @media (prefers-reduced-motion: reduce) {
         * { transition: none !important; }
@@ -377,7 +431,7 @@
         -->
         <p class="h-hook">
           dSYM 없이 크래시를 잡고,<br>
-          <span class="accent">버그를 잡으러 미국까지 날아갑니다.</span>
+          <span class="accent"><strong>버그를 잡으러 미국까지 날아갑니다.</strong></span>
         </p>
 
         <div class="h-contact">
@@ -404,7 +458,7 @@
       <!-- ════════ BODY ════════ -->
       <div class="body">
 
-        <!-- ── 경력 (left) ── -->
+        <!-- ── 경력 + OSS + AI Skill (left) ── -->
         <div>
           <div class="sec">
             <h2>경력</h2>
@@ -415,10 +469,12 @@
                   <span class="j-co">
                     샵라이브코리아
                     <a class="j-co-link" href="https://shoplive.kr" target="_blank" rel="noopener">shoplive.kr ↗</a>
+                    <a class="j-co-link" href="https://www.mk.co.kr/news/business/11962674" target="_blank" rel="noopener">MK ↗</a>
                   </span>
                   <span class="j-date">2025.01 – 현재</span>
                 </div>
-                <div class="j-role">iOS SDK Developer · 비디오 커머스 SaaS</div>
+                <div class="j-role">iOS SDK Developer · 비디오 커머스 SaaS · 송출/시청/숏폼 SDK</div>
+                <div class="j-clients"><span class="j-clients-label">주요 고객사</span> eBay · 무신사 · 29CM · 에이블리 · 오늘의집</div>
                 <div class="tags">
                   <span class="tag">UIKit</span>
                   <span class="tag">Combine</span>
@@ -428,12 +484,10 @@
                   <span class="tag">WebRTC</span>
                 </div>
                 <ul class="bl">
-                  <li>송출 · 시청 · 숏폼 플레이어/에디터 SDK 개발 및 유지보수</li>
-                  <li>RTMP ABR(적응형 비트레이트 조절) 직접 구현 → 송출 딜레이 <strong>85% 단축</strong> (7분+ → 5~7초)</li>
-                  <li>SRT 프로토콜 도입 → WebRTC 대비 방송 안정성 <strong>2배</strong> 향상 (높은 RTT 환경)</li>
-                  <li>디스크 캐싱 구현 → 해외 웹뷰 로딩 <strong>2.0s → 0.3s</strong>, 트래픽 비용 <strong>25%</strong> 절감</li>
-                  <li>dSYM 없는 난독화 크래시 분석 → 데이터 레이스·댕글링 포인터 해결, 크래시율 <strong>0%</strong></li>
-                  <li>무신사 · 오늘의집 · 이베이(미국 현지 출장) 협업 → 크로스 플랫폼 안정성 검증</li>
+                  <li>RTMP ABR 구현: 딜레이 드리프트 제거 — 최대 <strong>7분+ → 5~7초</strong> 안정화</li>
+                  <li>SRT 도입: 높은 RTT 환경 방송 안정성 WebRTC 대비 <strong>2배</strong> 향상</li>
+                  <li>디스크 캐싱: 해외 웹뷰 로딩 <strong>2.0s → 0.3s</strong>, 트래픽 비용 <strong>25%</strong> 절감</li>
+                  <li>dSYM 없는 난독화 크래시 분석: 데이터 레이스·댕글링 포인터 해결, 재발 <strong>0건</strong></li>
                 </ul>
               </div>
 
@@ -453,8 +507,8 @@
                   <span class="tag">SPM 모듈화</span>
                 </div>
                 <ul class="bl">
-                  <li>독립 앱을 SPM 모듈화하여 <strong>100만 MAU</strong> 모체 앱에 기능 손실 없이 통합</li>
-                  <li>외부 라이브러리 의존성 → 네이티브 전환으로 빌드 안정성·유지보수성 개선</li>
+                  <li>SPM 모듈화: <strong>100만 MAU</strong> 모체 앱에 기능 손실 없이 통합</li>
+                  <li>외부 라이브러리 네이티브 전환: 빌드 안정성·유지보수성 개선</li>
                 </ul>
               </div>
 
@@ -466,7 +520,7 @@
                   </span>
                   <span class="j-date">2022.02 – 2024.03</span>
                 </div>
-                <div class="j-role">iOS Developer · 육아 플랫폼 '쑥쑥찰칵'</div>
+                <div class="j-role">iOS Developer · 육아 플랫폼 '<a href="https://apps.apple.com/kr/app/%EC%91%A5%EC%91%A5%EC%B0%B0%EC%B9%B5/id1509183009" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;opacity:.8;">쑥쑥찰칵 ↗</a>'</div>
                 <div class="tags">
                   <span class="tag">UIKit</span>
                   <span class="tag">SwiftUI</span>
@@ -476,52 +530,13 @@
                   <span class="tag">WidgetKit</span>
                 </div>
                 <ul class="bl">
-                  <li>UIGraphicsImageRenderer 적용 → 메모리 <strong>50% 감소</strong>, 스크롤 CPU <strong>70% 개선</strong></li>
-                  <li>Vision Framework로 이미지 중복 탐지 <strong>60% 단축</strong>, 서버 용량 <strong>30%</strong> 절감</li>
-                  <li>AVFoundation 영상 제작 기능 → 사용자 만족도 <strong>20%</strong> 향상</li>
-                  <li>네이티브 위젯·키보드 확장 개발 → 리텐션 <strong>75%</strong> 달성</li>
+                  <li>UIGraphicsImageRenderer 적용: 메모리 <strong>50% 감소</strong>, 스크롤 CPU <strong>70% 개선</strong></li>
+                  <li>Vision Framework 적용: 이미지 중복 탐지 <strong>60% 단축</strong>, 서버 용량 <strong>30%</strong> 절감</li>
+                  <li>AVFoundation 영상 제작 기능: 출시 후 설문 기반 만족도 <strong>20%</strong> 향상</li>
+                  <li>네이티브 위젯·키보드 확장: D7·D14 리텐션 <strong>75%</strong> 달성</li>
                 </ul>
               </div>
 
-            </div>
-          </div>
-        </div>
-
-        <!-- ── 우측 사이드 ── -->
-        <div class="right">
-
-          <div class="sec">
-            <h2>기술 스택</h2>
-            <div class="pill-grp">
-              <div class="pg-label">언어 / 프레임워크</div>
-              <div class="pills">
-                <span class="pill hi">Swift</span>
-                <span class="pill">UIKit</span>
-                <span class="pill">SwiftUI</span>
-                <span class="pill">Combine</span>
-                <span class="pill">RxSwift</span>
-              </div>
-            </div>
-            <div class="pill-grp">
-              <div class="pg-label">아키텍처</div>
-              <div class="pills">
-                <span class="pill">Clean Arch</span>
-                <span class="pill">MVVM</span>
-                <span class="pill">Reactor</span>
-                <span class="pill">SPM</span>
-              </div>
-            </div>
-            <div class="pill-grp">
-              <div class="pg-label">미디어 / 스트리밍</div>
-              <div class="pills">
-                <span class="pill hi">iOS SDK</span>
-                <span class="pill">RTMP · ABR</span>
-                <span class="pill">SRT</span>
-                <span class="pill">WebRTC</span>
-                <span class="pill">AVFoundation</span>
-                <span class="pill">Vision</span>
-                <span class="pill">LLHLS</span>
-              </div>
             </div>
           </div>
 
@@ -542,11 +557,56 @@
             </ul>
           </div>
 
+        </div>
+
+        <!-- ── 우측 사이드 ── -->
+        <div class="right">
+
+          <div class="sec">
+            <h2>기술 스택</h2>
+            <div class="pill-grp">
+              <div class="pg-label">언어 / 프레임워크</div>
+              <div class="pills">
+                <span class="pill">Swift</span>
+                <span class="pill">UIKit</span>
+                <span class="pill">SwiftUI</span>
+                <span class="pill">Combine</span>
+                <span class="pill">RxSwift</span>
+                <span class="pill">SPM</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">아키텍처</div>
+              <div class="pills">
+                <span class="pill">Clean Architecture</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">디자인 패턴</div>
+              <div class="pills">
+                <span class="pill">MVVM</span>
+              </div>
+            </div>
+            <div class="pill-grp">
+              <div class="pg-label">미디어 / 스트리밍</div>
+              <div class="pills">
+                <span class="pill">iOS SDK</span>
+                <span class="pill">RTMP · ABR</span>
+                <span class="pill">SRT</span>
+                <span class="pill">WebRTC</span>
+                <span class="pill">AVFoundation</span>
+                <span class="pill">Vision</span>
+                <span class="pill">LLHLS</span>
+              </div>
+            </div>
+          </div>
+
           <div class="sec">
             <h2>AI Agent Skill</h2>
             <div class="meta">
               <b>study-ios</b><br />
-              AI 에이전트에서 사용하는 iOS 학습 SKILL 제작 및 유지보수
+              수동적 Q&amp;A의 한계를 느끼고 직접 제작한 Swift 멘토링 SKILL.<br />
+              AI가 역질문으로 사고를 교정 — Classic · Mastery 2모드, Claude Code · Codex · Gemini 호환.
               <small><a href="https://github.com/ITlearning/study-ios" target="_blank" rel="noopener">github.com/ITlearning/study-ios</a></small>
             </div>
           </div>
@@ -556,7 +616,7 @@
             <div class="meta">
               <b>순천향대학교</b><br />
               사물인터넷학과
-              <small>2018.03 – 2026.08 졸업 예정</small>
+              <small>2018.03 – 2026.08 졸업 예정<br />군휴학 후 개발자 재직 병행 · 비대면 과제 학점 이수</small>
             </div>
           </div>
 
@@ -568,20 +628,11 @@
             </div>
             <div class="meta">
               <b>CMC 11기</b> 동아리 대상 수상
-              <small>메타인지 앱 'MiTamin' 개발 · 2022.08–2022.11</small>
+              <small>메타인지 앱 '<a href="https://apps.apple.com/kr/app/mitamin/id6444240698" target="_blank" rel="noopener">MiTamin ↗</a>' 개발 · 2022.08–2022.11</small>
             </div>
             <div class="meta">
               <b>YAPP</b> 19기 · 23기 참여
               <small>2021.08 – 2024.02</small>
-            </div>
-          </div>
-
-          <div class="sec">
-            <h2>문제 해결 방식</h2>
-            <div class="ap">
-              <div class="ap-row"><b>근거 기반</b> — 로그·코드 근거로 근본 원인을 먼저 좁힙니다.</div>
-              <div class="ap-row"><b>다중 시나리오</b> — 단일 가설 집착 없이 빠르게 실험합니다.</div>
-              <div class="ap-row"><b>AI 도구</b> — 코드 생성보다 원인 분석·문서화에 집중합니다.</div>
             </div>
           </div>
 
